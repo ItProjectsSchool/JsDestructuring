@@ -55,6 +55,6 @@ function firstAndLastItem(someArray){
 let [first, last] =firstAndLastItem(numbers)  
 Now first is equal to 1 and last is equal to 5  
 
-
+Link to youtube video https://youtu.be/jqxF1KQV9f8
 
 
