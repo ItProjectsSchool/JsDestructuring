@@ -68,7 +68,7 @@ const men = {
   info: {   
 	height: 180,   
 	weight: 75,   
-	hairColor: 'black'   
+	hairColour: 'black'   
   }    
 }    
 
@@ -78,14 +78,14 @@ console.log('Name is '+men.name);
 console.log('Age is '+men.age);    
 console.log('Height is '+men.info.height);    
 console.log('Weight is '+men.info.weight);    
-console.log('Hair color is '+men.info.hairColor);    
+console.log('Hair colour is '+men.info.hairColour);    
 
 Results:    
 Name is Mark   
 Age is 20   
 Height is 180   
 Weight is 75   
-Hair color is black    
+Hair colour is black    
 
 It is an ordinary way, but there are some disadvantages to it.  
 And the major one is a long code. You can easily make a typo that will result in an error.   
@@ -134,13 +134,70 @@ How can we quickly get nested info from the object?
 
 To get neccessary info we have to use next syntax:
 
-let {info: {height, weight, hairColor}} =  men
-console.log(height, weight, hairColor) // 180, 75, black
+let {info: {height, weight, hairColour}} =  men
+console.log(height, weight, hairColour) // 180, 75, black
 
 Now, let's talk about the rest parameter in our destructuring syntax.
 What do you think we will get as a result of this code?
 
 let {name, ...rest} = men
 
+We will get next object: 
+
+{     
+  age: 20,   
+  info: {   
+	height: 180,   
+	weight: 75,   
+	hairColour: 'black'   
+  }    
+}    
 
 
+How it works.
+We take name property from our object and put it to the variable name. And after that, we store all other properties in variable rest. 
+
+This syntax can help us copy one object to another. 
+
+men2 = {...men} 
+Now variables men and men2 contain different pointers.
+We can check it. 
+console.log(men === men2) // false
+As you can see these to object aren't equal. 
+But men2 contains all properties like object men. 
+console.log(men2) 
+// {   
+  name: 'Mark',   
+  age: 20,   
+  info: {   
+	height: 180,   
+	weight: 75,   
+	hairColour: 'black'   
+  }    
+}    
+
+Also, destructuring can help us join 2 objects together. 
+For example we have object 
+women = {
+  name: 'Lila',
+  city: 'London', 
+  info: {
+	height: 160,
+	weight: 50
+  }
+}
+
+Let's join men and women. We can do it like this:
+
+let newPerson = {...men, ...women}
+
+And now let's display our new person. 
+console.log(newPerson). 
+//
+{
+  age: 20
+  city: "London"
+  info: {height: 160, weight: 50}
+  name: "Lila"
+}
+As you can see we have got the new object that consists of all existing keys. And values all keys our first object (men) have been replaced by values from object 2. Pay attention that info doesn't contain hairColour property. Property info has been replaced entirely.
