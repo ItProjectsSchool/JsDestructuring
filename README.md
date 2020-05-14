@@ -57,4 +57,35 @@ Now first is equal to 1 and last is equal to 5
 
 Link to youtube video https://youtu.be/jqxF1KQV9f8
 
+# Destructuring (Object)
+We continue to work with destructuring in one of the most used programming languages (javascript). In the previous part of the article, we discussed how to use destructuring in an array. And today our major focus will be on learning how to harness the power of destructuring for objects.
+Imagine we have the data of a men including his name, age and some characteristics like height, weight and hair colour. 
+That look like this:
+
+const men = {
+  name: 'Mark',
+  age: 20,
+  info: {
+	height: 180,
+	weight: 75,
+	hairColor: 'black'
+  }
+}
+
+And we can display our men:
+
+console.log('Name is '+men.name);
+console.log('Age is '+men.age);
+console.log('Height is '+men.info.height);
+console.log('Weight is '+men.info.weight);
+console.log('Hair color is '+men.info.hairColor);
+
+Results:
+Name is Mark
+Age is 20
+Height is 180
+Weight is 75
+Hair color is black
+
+
 
