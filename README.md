@@ -179,25 +179,27 @@ console.log(men2)
 Also, destructuring can help us join 2 objects together. 
 For example we have object 
 women = {
-  name: 'Lila',
-  city: 'London', 
-  info: {
-	height: 160,
-	weight: 50
-  }
-}
+  name: 'Lila',   
+  city: 'London',   
+  info: {   
+	height: 160,    
+	weight: 50   
+  }   
+}   
 
 Let's join men and women. We can do it like this:
 
-let newPerson = {...men, ...women}
+let newPerson = {...men, ...women}   
 
 And now let's display our new person. 
 console.log(newPerson). 
 //
-{
-  age: 20
-  city: "London"
-  info: {height: 160, weight: 50}
-  name: "Lila"
-}
+{   
+  age: 20    
+  city: "London"    
+  info: {height: 160, weight: 50}   
+  name: "Lila"   
+}   
 As you can see we have got the new object that consists of all existing keys. And values all keys our first object (men) have been replaced by values from object 2. Pay attention that info doesn't contain hairColour property. Property info has been replaced entirely.
+
+Video on youtube - https://youtu.be/q1H1HpW_Hxw
